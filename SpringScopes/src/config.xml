@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean class="com.app.Address" name="addrobj" scope="prototype">
+	   <property name="addrId" value="100"/>
+	   <property name="addrloc" value="kadapa"/>
+	</bean>
+	<bean class="com.app.Employee" name="emp"  scope="singleton">
+	  <property name="empId" value="105"/>
+	  <property name="empName" value="Lokesh"/>
+	  <property name="empSal" value="5000.3"/>
+	 <lookup-method bean="addrobj" name="getInstance"/>
+	</bean>
+	</beans>
